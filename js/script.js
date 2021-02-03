@@ -37,20 +37,44 @@
 // }
 
 // ЦИКЛЫ
-let num = 50;
+// let num = 50;
 
 // while (num < 55) {
 //    console.log(num);
 //    num++;
 // }
 
-do {
-   console.log(num);
-   num++;
-}
-while (num <= 55);
+// do {
+//    console.log(num);
+//    num++;
+// }
+// while (num <= 55);
 
-for (let i = 1; i < 8; i++) {
-   console.log(num);
-   num++;
-}
+// for (let i = 1; i < 8; i++) {
+//    console.log(num);
+//    num++; 
+// }
+
+
+// ФУНКЦИИ
+//стрелочная функция
+// const calc = (a, b) => a + b ;
+// console.log(calc(5, 6));
+
+// МЕТОДЫ И СВОЙСТВА
+
+// const logg = "Hello world";
+
+// console.log(logg.slice(6, 11));
+// console.log(logg.substring(6, 11));
+// console.log(logg.substr(6, 11));
+
+// const num = 12.2;
+// console.log(Math.round(num));
+
+// const test = "12.2px";
+// console.log(parseInt(test));
+// console.log(parseFloat(test));
+// console.log(isNaN(test));
+
+
