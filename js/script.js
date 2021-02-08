@@ -57,7 +57,7 @@
 
 
 // ФУНКЦИИ
-//стрелочная функция
+// // стрелочная функция
 // const calc = (a, b) => a + b ;
 // console.log(calc(5, 6));
 
@@ -143,9 +143,16 @@
 
 // МАССИВЫ 
 
-const arr = [2, 3, 6, 8, 10];
+const arr = [2, 7, 6, 8, 10];
 
-//если добавить элемент в определенный индекс, то остальные элементы создадутс и будут пустые
+// // sort с этой функцией сортирует цифры по порядку как числа , а не как строки
+// arr.sort(compareNum);
+// console.log(arr);
+// function compareNum(a, b) {
+//    return a - b;
+// }
+
+// // если добавить элемент в определенный индекс, то остальные элементы создадутс и будут пустые
 // arr[99] = 0;
 // console.log(arr.length);
 // console.log(arr); 
@@ -166,10 +173,124 @@ const arr = [2, 3, 6, 8, 10];
 //     console.log(`${i}: ${item} внутри массива ${arr}`);
 //  });
 
-//разрезает строку по указанному разделителю и возвращает массив
-const str = "jhgsdg, ksdjs, ssk";
-const products = str.split(", ");
-//join выводит массив в виде строки с указанным разделителем
-pr
+// // разрезает строку по указанному разделителю и возвращает массив
+// const str = "zhgsdg, ksdjs, ssk";
+// const products = str.split(", ");
+// // sort сортирует массив по алфафиту принимая данные как строки
+// products.sort();
+// //join выводит массив в виде строки с указанным разделителем
+// console.log(products.join('; '));
 
-console.log(products.join('; '));
+
+// // ПОВЕРХНОСТНОЕ КОПИРОВАНИЕ ДАННЫХ СЛОЖНЫХ ПЕРЕМЕННЫХ 
+
+// function copy(mainObj) {
+// // создаем переменную в которую будем копировать 
+//    let objCopy = {};
+// // с помощью перебора объекта for in присваиваем все значения в объявленную выше переменную
+//    let key;
+//    for (key in mainObj) {
+//       objCopy[key] = mainObj[key];
+//    }
+// // возвращаем новую переменную
+//    return objCopy;
+// }
+
+// const numbers = {
+//    a: 2,
+//    b: 5,
+//    c: {
+//       x: 7,
+//       y: 4
+//    }
+// };
+
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+// const add = {
+//    d: 17,
+//    e: 20
+// };
+
+// // создает независимый повнрхностный объект соединяя два объекта(не считая вложенных данных)
+// console.log(Object.assign(numbers, add));
+
+// // соединение с пустым объектом создает копию 
+// const clone = Object.assign({}, add);
+
+// clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+
+// // создание копии массива
+
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+// newArray[1] = 'kjshdsh';
+// console.log(newArray);
+// console.log(oldArray);
+
+// // ES6
+
+// const video = ['a', 'b', 'c'],
+//       blogs = ['d', 'e', 'f'],
+//       internet = [...video, ...blogs, 'g', 'h'];
+
+// console.log(internet);
+
+// // передача массива в виде строки в функцию 
+// function log(a, b, c) {
+//    console.log(a);
+//    console.log(b);
+//    console.log(c);
+// }
+
+// const num = [2, 5, 10];
+// log(...num);
+
+// // создание копии массива
+
+// const array = ['a', 'b'];
+// const newArray = [...array];
+
+// // создание копии объекта ES9
+
+// const q = {
+//    one: 1,
+//    two: 2
+// };
+
+// const newObj = {...q};
+// console.log(newObj);
+
+// ООП
+
+const soldier = {
+   health: 400,
+   armor: 100,
+   sayHello: function() {
+      console.log("hello");
+   }
+};
+
+// const john = {
+//    health: 100
+// };
+
+// присвоение наследования John от soldier после создания переменной john
+Object.setPrototypeOf(john, soldier);
+
+
+john.sayHello();
+console.log(john.armor);
+
+// присвоение наследования при создании объекта
+const john = Object.create(soldier);
